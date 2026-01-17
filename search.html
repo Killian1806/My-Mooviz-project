@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultats de recherche - My Mooviz</title>
+    <meta name="description" content="Recherchez vos films préférés parmi des milliers de titres et trouvez toutes les informations sur les dernières sorties cinéma.">
+    <link rel="stylesheet" href="assets/css/communs.css">
+    <link rel="stylesheet" href="assets/css/search.css">
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <div id="logo">
+                <a href="home.html"><img src="assets/img/logo_mooviz.svg" alt="logo" width="150" height="70"/></a>
+            </div>
+
+            <div id="search-container">
+                <form id="searchForm" action="search.html" method="get">
+                    <input type="text" id="searchInput" name="query" placeholder="Rechercher un film...">
+                    <button type="submit">Rechercher</button>
+                </form>
+            </div>
+
+            <div class="nav-right">
+                <div id="wishlist">
+                    <a href="wishlist.html"><img src="assets/img/film.svg" alt="Wishlist"></a>
+                </div>
+                <div id="help">
+                    <a href="help.html"><img src="assets/img/help.svg" alt="Aide"></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="desktop-only" style="text-align: center; margin: 20px 0;">Résultats de recherche</h1>
+
+        <div class="mobile-search-section">
+            <form id="mobileSearchForm" action="search.html" method="get">
+                <input type="text" id="mobileSearchInput" name="query" placeholder="Rechercher un film...">
+                <button type="submit">OK</button>
+            </form>
+        </div>
+
+        <div id="searchResults"></div>
+    </main>
+
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="assets/img/logo_mooviz.svg" alt="logo Mooviz" class="footer-logo" width="150" height="50">
+                <p>Votre guide cinématographique personnel pour découvrir, lister et explorer le monde du septième art.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="home.html">Accueil</a></li>
+                    <li><a href="search.html">Rechercher</a></li>
+                    <li><a href="wishlist.html">Ma Liste</a></li>
+                    <li><a href="help.html">Aide & Support</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h3>Suivez-nous</h3>
+                <div class="reseaux">
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener"><img src="assets/img/picto_instagram.svg"
+                            alt="Instagram" width="24" height="24"></a>
+                    <a href="https://www.tiktok.com/" target="_blank" rel="noopener"><img src="assets/img/picto_tik_tok.svg"
+                            alt="TikTok" width="24" height="24"></a>
+                    <a href="https://www.youtube.com/" target="_blank" rel="noopener"><img src="assets/img/picto_youtube.svg"
+                            alt="Youtube" width="24" height="24"></a>
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener"><img src="assets/img/picto_facebook.svg"
+                            alt="Facebook" width="24" height="24"></a>
+                </div>
+                <div class="cgu">
+                    <a href="#">Conditions Générales d'Utilisation</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="ml">
+                <p>© 2025 Tous droits réservés. Site créé par Maud DUFOUR, Killian MAHUT, Jeremy BYRDY-CHERON et Raphaël
+                    ALIZIER</p>
+            </div>
+        </div>
+    </footer>
+
+    <nav class="nav-bottom">
+        <a href="home.html" class="nav-item">
+            <img src="assets/img/home.svg" alt="Accueil">
+            <span>Accueil</span>
+        </a>
+        <a href="search.html" class="nav-item">
+            <img src="assets/img/search.svg" alt="Recherche">
+            <span>Recherche</span>
+        </a>
+        <a href="wishlist.html" class="nav-item">
+            <img src="assets/img/film.svg" alt="Wishlist">
+            <span>Ma Liste</span>
+        </a>
+        <a href="help.html" class="nav-item">
+            <img src="assets/img/help.svg" alt="Aide">
+            <span>Aide</span>
+        </a>
+    </nav>
+
+    <script src="assets/js/search.js" defer></script>
+    <script src="assets/js/nav.js" defer></script>
+
+</body>
+
+</html>

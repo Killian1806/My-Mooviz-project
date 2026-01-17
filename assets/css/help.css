@@ -1,0 +1,142 @@
+:root {
+  --rose: #ff0077;
+  --white: #fff;
+  --light-grey: #ffffff33;
+  --card: #ffffff14;
+  --black: #000;
+}
+
+.help-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.help-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* --- Style de l'Accordéon --- */
+.help-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.help-card {
+    background: var(--card);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--light-grey);
+    border-radius: 12px;
+    overflow: visible; 
+    transition: background 0.3s ease;
+}
+
+.help-card:hover {
+    background: #ffffff1f;
+}
+
+summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+summary::-webkit-details-marker { display: none; }
+
+.card-header h2 {
+    flex: 1;
+    font-size: 1.3rem;
+    margin: 0;
+    color: var(--white);
+}
+
+.arrow {
+    transition: transform 0.3s ease;
+    color: var(--rose);
+    font-size: 0.8rem;
+}
+
+details[open] .arrow {
+    transform: rotate(180deg);
+}
+
+/* --- Contenu intérieur --- */
+.steps-container {
+    padding: 0 20px 25px 65px;
+    border-top: 1px solid #ffffff1a;
+    animation: slideDown 0.4s ease-out;
+}
+
+.step {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.step-number {
+    background: var(--rose);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    flex-shrink: 0;
+    box-shadow: 0 0 10px #ff007766;
+}
+
+/* --- Système d'images cachées --- */
+.preview-trigger {
+    color: var(--rose);
+    font-weight: bold;
+    text-decoration: underline dotted;
+    cursor: help;
+    position: relative;
+    display: inline-block;
+}
+
+.preview-img {
+    position: absolute;
+    bottom: 140%; 
+    left: 50%;
+    transform: translateX(-50%) scale(0.8);
+    width: 280px;
+    border-radius: 10px;
+    border: 2px solid var(--rose);
+    box-shadow: 0 15px 35px var(--black);
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    pointer-events: none;
+}
+
+/* Affichage au survol du texte rose */
+.preview-trigger:hover .preview-img {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+}
+
+/* Triangle décoratif */
+.preview-trigger:hover .preview-img::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -8px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: var(--rose) transparent transparent transparent;
+}
+
+/* --- Animations --- */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

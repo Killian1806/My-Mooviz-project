@@ -1,0 +1,100 @@
+:root {
+    --card: #ffffff14;
+    --shadow: #00000099;
+}
+
+/* Titre de la page */
+h1 {
+    text-align: center;
+    margin: 40px 0 20px 0;
+    color: var(--white);
+    font-size: 2rem;
+}
+
+#countryName {
+    color: var(--rose);
+    text-transform: uppercase;
+}
+
+/* Conteneur de la grille */
+#movieList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    gap: 30px;
+    padding: 20px 5%;
+    justify-items: center;
+}
+
+/* Carte de film */
+.movie-card-trie {
+    background-color: var(--card);
+    width: 100%;
+    max-width: 220px;
+    border-radius: 14px;
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--light-grey);
+}
+
+.movie-card-trie:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px var(--shadow);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.movie-card-trie img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.movie-card-trie h3 {
+    font-size: 1rem;
+    margin: 10px 0;
+    min-height: 2.4em; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.2;
+}
+
+.movie-date {
+    font-size: 0.85rem;
+    color: var(--text-grey);
+    margin-top: auto;
+}
+
+/* --- Responsive Mobile --- */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+        margin-top: 20px;
+    }
+
+    #movieList {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .movie-card-trie {
+        padding: 10px;
+        max-width: none; 
+    }
+
+    .movie-card-trie img {
+        height: 220px; 
+    }
+
+    .movie-card-trie h3 {
+        font-size: 0.9rem;
+    }
+}
