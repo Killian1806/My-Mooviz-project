@@ -37,10 +37,12 @@ main {
   padding: 10px 40px;
   background-color: #000112cc;
   backdrop-filter: blur(12px);
-  position: sticky;
+  
   top: 0;
   z-index: 1000;
   border-bottom: 1px solid var(--light-grey);
+  width: 100%;
+  position: fixed;
 }
 
 #logo img {
