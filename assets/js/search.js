@@ -73,7 +73,7 @@
 
       card.innerHTML = `
                 <div class="card-img-wrapper">
-                    <img src="${poster}" alt="${movie.title}" loading="lazy" width="300" height="450">
+                    <img src="${poster}" alt="${movie.title}" loading="lazy">
                 </div>
                 <div class="card-info">
                     <h3>${movie.title || "Titre inconnu"}</h3>
