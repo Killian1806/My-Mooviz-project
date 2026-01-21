@@ -17,24 +17,28 @@
     margin-bottom: 40px;
 }
 
-/* --- Style de l'Accordéon --- */
-.help-accordion {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
 .help-card {
     background: var(--card);
     backdrop-filter: blur(10px);
     border: 1px solid var(--light-grey);
     border-radius: 12px;
-    overflow: visible; 
+    overflow: visible !important; 
     transition: background 0.3s ease;
+    position: relative;
+    z-index: 1; 
 }
+
+.help-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow: visible; 
+}
+
 
 .help-card:hover {
     background: #ffffff1f;
+    z-index: 100;
 }
 
 summary {
@@ -102,18 +106,24 @@ details[open] .arrow {
 
 .preview-img {
     position: absolute;
-    bottom: 140%; 
+    bottom: 120%; 
     left: 50%;
     transform: translateX(-50%) scale(0.8);
     width: 280px;
+    max-width: 80vw; 
     border-radius: 10px;
     border: 2px solid var(--rose);
     box-shadow: 0 15px 35px var(--black);
-    z-index: 999;
     visibility: hidden;
+    z-index: 9999;
     opacity: 0;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     pointer-events: none;
+}
+
+.help-card:first-child .preview-img {
+    bottom: auto;
+    top: 120%; 
 }
 
 /* Affichage au survol du texte rose */
