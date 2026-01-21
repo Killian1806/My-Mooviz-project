@@ -83,6 +83,7 @@ main {
     padding: 5px 15px;
     width: 100%;
     max-width: 500px;
+    margin-top: 6dvh;
   }
 
   #mobileSearchInput {

@@ -149,6 +149,7 @@ h2 {
 /* --- Responsive Mobile --- */
 @media (max-width: 768px) {
   #map {
+    margin-top: 10dvh;
     height: 350px;
   }
 
