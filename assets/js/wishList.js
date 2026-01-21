@@ -10,7 +10,7 @@
 
   function renderWishlist(container) {
     let moviesList = [];
-    
+
     // Récupération sécurisée
     try {
       moviesList = JSON.parse(localStorage.getItem("moviesList")) || [];
@@ -19,13 +19,12 @@
       moviesList = [];
     }
 
-    // Cas liste vide
     if (moviesList.length === 0) {
       container.innerHTML = `
-        <div class="empty-state">
-          <p id='empty-message'>Votre wishlist est vide.</p>
-          <a href="home.html" class="btn-primary">Découvrir des films</a>
-        </div>`;
+    <div class="empty-state">
+      <p id='empty-message'>Votre wishlist est vide.</p>
+      <a href="home.html" class="btn-primary">Découvrir des films</a>
+    </div>`;
       return;
     }
 
@@ -50,7 +49,7 @@
                 </a>
                 <button class="remove-btn" data-id="${movie.id}">Supprimer</button>
             `;
-      
+
       fragment.appendChild(movieElement);
     });
 
@@ -73,10 +72,10 @@
     try {
       let moviesList = JSON.parse(localStorage.getItem("moviesList")) || [];
       // On filtre par ID plutôt que par index
-      moviesList = moviesList.filter(m => m.id != id);
-      
+      moviesList = moviesList.filter((m) => m.id != id);
+
       localStorage.setItem("moviesList", JSON.stringify(moviesList));
-      
+
       // Animation optionnelle avant de rendre à nouveau
       renderWishlist(container);
     } catch (e) {
