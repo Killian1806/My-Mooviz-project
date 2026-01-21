@@ -5,13 +5,28 @@
   --rose: #ff0077;
 }
 
-.results-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 25px;
-  padding: 20px;
-  justify-items: center;
+main {
+  padding: 40px 5%;
+  flex: 1;
 }
+
+.section-title-centered {
+    grid-column: 1 / -1; 
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: var(--white);
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 25px;
+    padding: 20px;
+    align-items: start; 
+}
+
 
 .movie-card {
   width: 150px;

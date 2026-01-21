@@ -104,7 +104,7 @@
       list.push(movieObj);
       localStorage.setItem("moviesList", JSON.stringify(list));
       
-      addBtn.textContent = "✓ Dans ma liste";
+      addBtn.textContent = "✓";
       addBtn.disabled = true;
       if (modal) modal.style.display = "flex";
     };
